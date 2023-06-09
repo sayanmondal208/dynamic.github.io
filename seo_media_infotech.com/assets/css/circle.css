@@ -1,0 +1,308 @@
+.holderCircle,
+.test_height {
+    height: 500px;
+    width: 500px;
+    position: relative;
+}
+
+.test_height::after {
+    content: '';
+    width: 420px;
+    height: 420px;
+    border-radius: 100%;
+    border: 2px solid #e0011a;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+.dotCircle {
+    position: relative;
+    border-radius: 100%;
+    z-index: 20;
+    top: 50%;
+    left: 0;
+}
+
+.dotCircle .itemDot {
+    display: block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    z-index: 3;
+    cursor: pointer;
+    border: solid 1.5px #fff;
+    box-shadow: 0 4px 7px 0 #00000045;
+}
+
+.dotCircle .itemDot img {
+    max-width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.dotCircle .itemDot::after {
+    content: "";
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    border: none;
+}
+
+.dotCircle .itemDot::before {
+    content: "";
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    border: none;
+}
+
+.dotCircle .itemDot.active {
+    color: #fff;
+    transition: 0.5s;
+    border: solid 3px #fff;
+    box-shadow: 0 1px 7px 0 #00000045;
+}
+
+.dotCircle .itemDot.active::after {
+    border-color: #eb0755;
+}
+
+.dotCircle .itemDot.active::before {
+    border-color: #eb0755;
+}
+
+.dotCircle .itemDot .forActive {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.dotCircle .itemDot .forActive::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border: 3px solid #FE9290;
+    bottom: -31px;
+    left: -14px;
+    filter: blur(1px);
+    position: absolute;
+    border-radius: 100%;
+}
+
+.dotCircle .itemDot .forActive::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    filter: blur(5px);
+    top: -15px;
+    position: absolute;
+    transform: rotate(-45deg);
+    border: 6px solid #F48E2A;
+    right: -39px;
+}
+
+.dotCircle .itemDot.active .forActive {
+    display: block;
+}
+
+.dotCircle .itemDot:hover {
+    background: #34495e;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.dotCircle .itemDot:hover::before {
+    border-color: #34495e;
+}
+
+.contentCircle {
+    position: relative;
+    margin-top: 50px;
+}
+
+.contentCircle .CirItem {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.CirItem.active {
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.testim_img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    display: block;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 450px) {
+    .test_height {
+        height: 300px;
+        width: 300px;
+        margin: 30px auto;
+    }
+    .test_height::after {
+        height: 275px;
+        width: 275px;
+        top: 15px;
+    }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 767px) {
+    .holderCircle {
+        height: 300px;
+    }
+    .test_height {
+        height: 400px;
+        width: 400px;
+        margin: 50px auto;
+    }
+    .test_height:after {
+        height: 320px;
+        width: 320px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .contentCircle .CirItem {
+        position: relative;
+        display: none;
+        margin-top: 0px;
+    }
+    .contentCircle .CirItem.active {
+        display: block;
+    }
+    .dotCircle .itemDot {
+        width: 65px;
+        height: 65px;
+    }
+    .dotCircle .itemDot::before {
+        width: 65px;
+        height: 65px;
+    }
+    .dotCircle .itemDot::after {
+        width: 65px;
+        height: 65px;
+    }
+    .dotCircle {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+    .contentCircle {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .test_height {
+        height: 355px;
+        width: 355px;
+        margin: 0px auto;
+    }
+    .test_height:after {
+        height: 315px;
+        width: 315px;
+        top: 26px;
+    }
+    .dotCircle .itemDot {
+        width: 65px;
+        height: 65px;
+    }
+    .dotCircle .itemDot::before {
+        width: 65px;
+        height: 65px;
+    }
+    .dotCircle .itemDot::after {
+        width: 65px;
+        height: 65px;
+    }
+    .dotCircle {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .test_height {
+        height: 385px;
+        width: 385px;
+        margin: 0px auto;
+    }
+    .test_height:after {
+        height: 320px;
+        width: 320px;
+        top: 32px;
+    }
+    .dotCircle .itemDot {
+        width: 70px;
+        height: 70px;
+    }
+    .dotCircle .itemDot::before {
+        width: 70px;
+        height: 70px;
+    }
+    .dotCircle .itemDot::after {
+        width: 70px;
+        height: 70px;
+    }
+    .dotCircle {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {}
